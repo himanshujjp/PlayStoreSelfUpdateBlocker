@@ -15,12 +15,13 @@ Prevents the **Google Play Store** from auto-updating itself. Useful for users t
 - Designed to keep a stable Play Store version on rooted setups.
 
 ## Install
-1. Download the latest `PUSBlocker-v*.zip` from **Releases**.
-2. Open **Magisk → Modules → Install from storage** and select the ZIP.
-3. Reboot.
+- Download the module ZIP from Releases.
+- Disconnect your internet connection and uninstall Play Store updates (to revert to the factory version).
+- Flash via Magisk Manager, APatch, or KernelSU.
+- Reboot your device.
 
 ## Uninstall / Restore
-- Remove module from **Magisk → Modules**, reboot. Play Store can update normally again.
+- Remove via your root manager (Magisk, APatch, KernelSU) or flash the uninstall ZIP.
 
 ## Compatibility
 - Android 10+ (report issues if you find any)
