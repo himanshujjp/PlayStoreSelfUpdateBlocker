@@ -1,0 +1,33 @@
+name: Build Magisk Module Zip
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up zip
+        run: sudo apt-get update && sudo apt-get install -y zip
+
+      - name: Build module zip
+        run: |
+          zip -r PlayStoreSelfUpdateBlocker-${{ github.ref_name }}.zip module.prop post-fs-data.sh service.sh uninstall.sh system/
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: PlayStoreSelfUpdateBlocker
+          path: PlayStoreSelfUpdateBlocker-*.zip
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: PlayStoreSelfUpdateBlocker-*.zip
