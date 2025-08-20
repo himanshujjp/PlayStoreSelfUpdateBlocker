@@ -31,3 +31,5 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: PlayStoreSelfUpdateBlocker-*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
