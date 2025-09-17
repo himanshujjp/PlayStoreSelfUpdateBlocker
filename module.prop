@@ -1,6 +1,6 @@
 id=PUSBlocker
 name=🚫PlayStoreSelfUpdateBlocker🚫
 version=1.0
-versionCode=1
+versionCode=1.1
 author=@himanjjp
-description:Prevents the Google Play Store from auto-updating itself. Designed to help maintain valid device attestation under the new Play Integrity API rules.
+description=Prevents the Google Play Store from auto-updating itself. Designed to help maintain valid device attestation under the new Play Integrity API rules.
